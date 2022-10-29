@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let students = ["Tí", "Tèo", "Tồ"];
+
+  function displayStudents(arr) {
+    console.log("List of student is: ");
+    for (let i = 0; i < arr.length; i++) {
+      console.log(arr[i]);
+    }
+  }
+
+  function addStudent(newStu, arr) {
+    arr.push(newStu);
+  }
+
+  function editStudent(existingStu, arr) {
+    for (let i = 0; i < arr.length; i++) {
+      if (existingStu === arr[i]) {
+        let newName = prompt("Enter new student name want to replace: ");
+        arr[i] = newName;
+      }
+    }
+  }
+
+  function removeStudent(existingStu, arr) {
+    let arrayAfterRemove = [];
+    for (let i = 0; i < arr.length; i++) {
+      if (existingStu !== arr[i]) {
+        arrayAfterRemove.push(arr[i]);
+      }
+    }
+    return arrayAfterRemove;
+  }
+
+  function main() {
+    //Display list of student
+    displayStudents(students);
+
+    //Add new student
+    let newStudent = prompt("Enter new student name want to add: ");
+    addStudent(newStudent, students);
+    displayStudents(students);
+
+    //Edit existing student
+    let editingStudent = prompt("Enter student name want to edit: ");
+    editStudent(editingStudent, students);
+    displayStudents(students);
+
+    let removingStudent = prompt("Enter student name want to remove: ");
+    let arrAfterRemove = removeStudent(removingStudent, students);
+    displayStudents(arrAfterRemove);
+  }
+
+  main();
+</script>
+</body>
+</html>

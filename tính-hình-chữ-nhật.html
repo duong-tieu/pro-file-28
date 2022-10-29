@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id=" DemoCanvas" width ="500" height="600"></canvas>
+<script>
+   let Rectangle = function (width,height) {
+       this.getArea = function () {
+           return width * height;
+       }
+       this.getPerimeter = function () {
+           return (width + height) * 2;
+       }
+       this.getAreass = function () {
+           for ( let i = 1; i <= height ;i++){
+               for ( let j =1 ; j <=width;j++){
+                   document.write('');
+               }
+               document.write("<br/>");
+           }
+       }
+       this.display = function () {
+           console.log("width=" + width +";height =" + height);
+           console.log("Area:" + this.getArea());
+           console.log("chu vi la:" + this.getPerimeter());
+           console.log(this.getAreass);
+           }
+       }
+       function main(){
+       let rec1 = new Rectangle(9,5);
+       console.log(" tinh dien tich")
+       rec1.display();
+   }
+   main();
+</script>
+</body>
+</html>
